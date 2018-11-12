@@ -1,19 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="UNO logo" class="uno-logo" src="./assets/uno-logo.png">
+    <router-view></router-view>
+    <HelloWorld msg="LET'S PLAY" msg1="Please add players and then click Start" />
+    <Players />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/HelloWorld.vue';
+import Players from './components/Players.vue';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
-  }
-}
+    HelloWorld,
+    Players,
+  },
+};
 </script>
 
 <style>
@@ -24,5 +28,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.uno-logo {
+  height: 200px;
 }
 </style>
