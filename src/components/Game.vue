@@ -9,6 +9,7 @@
                     <th v-for="player in players" :key="player">
                         <input value="" type="number">
                     </th>
+                    <button>Next</button>
                 </tr>
             </thead>
         </table>
