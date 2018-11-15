@@ -1,13 +1,21 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>{{ msg1 }}</h2>
+  <div class="home">
+    <h1>LET'S PLAY</h1>
+    <h2>Please add players and then click Start</h2>
+
+    <Players />
   </div>
 </template>
 
 <script>
+import Players from './Players.vue';
+
 export default {
-  name: 'HelloWorld',
+  name: 'home',
+  components: {
+    Players,
+  },
+
   props: {
     msg: String,
     msg1: String,
