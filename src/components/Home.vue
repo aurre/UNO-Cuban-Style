@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <h1>LET'S PLAY</h1>
-    <h2>Please add players and then click Start</h2>
+    <h1>CUBAN STYLE!</h1>
+    <h2>Please add players to Start</h2>
 
     <Players />
   </div>
