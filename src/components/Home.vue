@@ -1,6 +1,9 @@
 <template>
   <div class="home">
     <h1>CUBAN STYLE!</h1>
+
+    <game-list></game-list>
+    
     <h2>Please add players to Start</h2>
 
     <Players />
@@ -8,11 +11,13 @@
 </template>
 
 <script>
+import GameList from '@/components/GameList';
 import Players from './Players.vue';
 
 export default {
   name: 'home',
   components: {
+    GameList,
     Players,
   },
 

@@ -1,14 +1,14 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import createPersistedState from 'vuex-persistedstate';
+//import createPersistedState from 'vuex-persistedstate';
 
-import home from './modules/home';
+import game from './modules/game/index';
 
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
-  plugins: [createPersistedState()],
+  plugins: [/*createPersistedState()*/],
   modules: {
-    home,
+    game
   },
 });

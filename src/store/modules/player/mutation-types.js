@@ -1,0 +1,2 @@
+export const POPULATE_PLAYERS = "POPULATE_PLAYERS";
+export const ADD_PLAYER = "ADD_PLAYER";
