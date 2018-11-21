@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <img alt="UNO logo" class="uno-logo" src="./assets/uno-logo.png">
     <router-view></router-view>
-
   </div>
 </template>
 

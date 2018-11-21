@@ -1,27 +1,32 @@
 <template>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col" v-for="player in players" :key="player">{{ player }}</th>
-      </tr>
-      <tr>
-        <th v-for="(player, index) in players" :key="player">
-          <input class="input-group-text" :key="index" v-model="data.points[index]" type="number">
-        </th>
-        <b-button :size="sm" :variant="success" v-on:click="savePoints">Next</b-button>
-      </tr>
-      <tr v-for="(row, indx1) in data.handsPoints" :key="row">
-        <th v-for="(col, indx2) in row" :key="col">
-          {{ data.handsPoints[indx1][indx2] }}
-        </th>
-      </tr>
-      <tr>
-        <th v-for="total in data.totalPoints" :key="total">
-          {{ total }}
-        </th>
-      </tr>
-    </thead>
-  </table>
+  <div>
+    <div class="container container-margin font">
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col" v-for="player in players" :key="player">{{ player }}</th>
+          </tr>
+          <tr v-for="(row, indx1) in data.handsPoints" :key="row">
+            <th scope="col" v-for="(col, indx2) in row" :key="col">
+              {{ data.handsPoints[indx1][indx2] }}
+            </th>
+          </tr>
+          <tr>
+            <th scope="col" v-for="(player, index) in players" :key="player">
+              <input class="input-group-text input-margin" :key="index" v-model="data.points[index]" type="number">
+            </th>
+          </tr>
+          <tr>
+            <th v-for="total in data.totalPoints" :key="total">
+              {{ total }}
+            </th>
+          </tr>
+        </thead>
+      </table>
+      <b-button :size="'lg'" :variant="'success'" v-on:click="savePoints">Next</b-button>
+    </div>
+  </div>
+
 </template>
 
 <script>
@@ -87,6 +92,19 @@ th {
 th input {
   min-width: 10px;
   max-width: 100%;
+}
+
+.input-margin {
+  margin: auto;
+}
+
+.container-margin {
+  margin-top: 3rem;
+}
+
+.font {
+  font-family: 'Noto Sans TC', sans-serif;
+  size: 25px;
 }
 </style>
 

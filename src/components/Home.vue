@@ -1,8 +1,8 @@
 <template>
   <div class="home">
+    <img alt="UNO logo" class="uno-logo" src="../assets/uno-logo.png">
     <h1>CUBAN STYLE!</h1>
     <h2>Please add players to Start</h2>
-
     <Players />
   </div>
 </template>
