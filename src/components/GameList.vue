@@ -5,14 +5,16 @@
             <table class="table table-bordered table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">Id</th>
                     <th scope="col">Location</th>          
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="game in games" :key="game.id">
                     <th scope="row">{{game.id}}</th>
-                    <td>{{ game.location }}</td>
+                    <td>                        
+                        <b-link href="/game-detail" ><span>{{ game.location }}</span></b-link>
+                    </td>
                 </tr>
                 <tr>
                     <td colspan="2">
@@ -22,15 +24,12 @@
                                 <b-input class="mb-2 mr-sm-2 mb-sm-0" id="location" placeholder="Enter location..." v-model="data.location"  />
                                 <b-button variant="primary" v-on:click="newGame" :disabled="!isComplete">Start New Game</b-button>
                             </b-form>
-                            <!-- <input type="text" class="w-100 mr-2 pl-1" placeholder="Enter location">
-                            <button type="button" class="btn btn-primary">Add Game</button> -->
                         </div>
                     </td>
                 </tr>
             </tbody>
             </table>
         </div>
-        
     </div>
 </template>
 
@@ -63,7 +62,7 @@ export default {
       this.$store
         .dispatch(GameActions.NEW_GAME, this.data.location)
         .then(() => {
-          this.$router.push("/game");
+          this.$router.push("/game-setup");
         });
     }
   }

@@ -1,6 +1,6 @@
-export const POPULATE_GAMES = "POPULATE_GAMES";
-export const NEW_GAME = "NEW_GAME";
-export const ADD_PLAYER = "ADD_PLAYER";
-export const REMOVE_PLAYER = "REMOVE_PLAYER";
-export const ADD_HAND = "ADD_GAME_HAND"
-export const MARK_AS_SAVED = "MARK_AS_SAVED";
+export const POPULATE_GAMES = "[GAME] POPULATE_GAMES";
+export const NEW_GAME = "[GAME] NEW_GAME";
+export const ADD_PLAYER = "[GAME] ADD_PLAYER";
+export const REMOVE_PLAYER = "[GAME] REMOVE_PLAYER";
+export const ADD_HAND = "[GAME] ADD_GAME_HAND"
+export const MARK_AS_SAVED = "[GAME] MARK_AS_SAVED";

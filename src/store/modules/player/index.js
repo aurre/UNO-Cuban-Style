@@ -19,7 +19,19 @@ const mutations = {
 const actions = {
     [ActionTypes.GET_PLAYERS](context) {
         // TODO: Get list of players from API 
-        const players = [];
+        const players = [{
+            id: 3,
+            name: 'Ariel'
+        }, {
+            id: 1,
+            name: 'Cristina'
+        }, {
+            id: 2,
+            name: 'Raysa'
+        }, {
+            id: 4,
+            name: 'Mauro'
+        }];
         context.commit(MutationTypes.POPULATE_PLAYERS, players);
     },
     [ActionTypes.ADD_PLAYER](context, data) {

@@ -6,7 +6,7 @@ export { ActionTypes }
 const state = {
     games: [],
     current: {
-        name: '',
+        location: '',
         hands: [],
         players: [],
         isDirty: false,
@@ -18,10 +18,10 @@ const mutations = {
         state.games = games;
     },
 
-    [MutationTypes.NEW_GAME](state, gameName) {
+    [MutationTypes.NEW_GAME](state, location) {
         // reset current game
         state.current = {
-            name: gameName,
+            location: location,
             hands: [],
             players: [],
             isDirty: true
@@ -62,8 +62,8 @@ const actions = {
         context.commit(MutationTypes.POPULATE_GAMES, games);
     },
 
-    [ActionTypes.NEW_GAME](context, gameName) {
-        context.commit(MutationTypes.NEW_GAME, gameName);
+    [ActionTypes.NEW_GAME](context, location) {
+        context.commit(MutationTypes.NEW_GAME, location);
     },
 
     [ActionTypes.ADD_PLAYER](context, player) {
