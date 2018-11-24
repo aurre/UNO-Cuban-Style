@@ -53,7 +53,6 @@ export default {
       return this.data.location;
     },
     games() {
-      console.log(this.$store.getters.games);
       return this.$store.getters.games;
     },
   },
