@@ -1,6 +1,6 @@
 import * as ActionTypes from './action-types';
 import * as MutationTypes from './mutation-types';
-import BASE_URL from '../../../config/app-settings.js';
+import BASE_URL from '@/config/app-settings.js';
 import axios from 'axios';
 
 export { ActionTypes };
