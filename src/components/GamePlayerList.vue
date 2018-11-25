@@ -28,6 +28,18 @@
 
             </td>
           </tr>
+          <tr v-if="selectablePlayers.length > 0">
+            <td colspan="2">
+              <b-form inline class="d-flex flex-row justify-content-between">
+                <div>
+                  <label class="sr-only" for="player">Player</label>
+                  <b-form-input type="text" placeholder="New Player Name" class="mb-2 mr-sm-2 mb-sm-0" id="player" v-model="playerName" />
+                </div>
+                <b-button variant="success" v-on:click="addPlayer">Add New Player</b-button>
+              </b-form>
+
+            </td>
+          </tr>
           <tr v-if="!canStartGame">
             <td colspan="2" class="text-center">
               <span v-if="missingPlayerCount > 0">
@@ -62,6 +74,7 @@ export default {
   data() {
     return {
       selected: -1,
+      playerName: '',
     };
   },
   computed: {

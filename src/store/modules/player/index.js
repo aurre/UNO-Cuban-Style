@@ -1,8 +1,8 @@
 import * as ActionTypes from './action-types';
 import * as MutationTypes from './mutation-types';
-import axios from 'axios';
+import BASE_URL from '../../../config/app-settings.js';
 
-const BASE_URL = 'http://localhost:3000/';
+import axios from 'axios';
 
 export { ActionTypes };
 
