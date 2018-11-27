@@ -1,2 +1,3 @@
 export const GET_PLAYERS = "[PLAYER] GET_PLAYERS";
 export const ADD_PLAYER = "[PLAYER] ADD_PLAYER";
+export const REMOVE_PLAYER = "[PLAYER] REMOVE_PLAYER";

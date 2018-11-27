@@ -55,13 +55,12 @@ const mutations = {
 
 const actions = {
   async [ActionTypes.GET_GAMES](context) {
-    // TODO: Get list of games from API
     const games = await axios.get(`${BASE_URL}api/games`);
     context.commit(MutationTypes.POPULATE_GAMES, games.data);
   },
 
-  [ActionTypes.NEW_GAME](context, location) {
-    axios.post(`${BASE_URL}api/games`, { location });
+  async [ActionTypes.NEW_GAME](context, location) {
+    await axios.post(`${BASE_URL}api/games`, { location });
     context.commit(MutationTypes.NEW_GAME, location);
   },
 
