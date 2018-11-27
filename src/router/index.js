@@ -3,6 +3,7 @@ import Router from 'vue-router';
 
 import Home from '@/pages/Home';
 import GameSetup from '@/pages/GameSetup';
+import ManagePlayers from '@/pages/ManagePlayers';
 
 Vue.use(Router);
 
@@ -12,7 +13,7 @@ export default new Router({
   routes: [
     { path: '/', name: 'home', component: Home },
     { path: '/game-setup', name: 'game-setup', component: GameSetup },
-    // { path: '/game', name: 'game', component: Game },
+    { path: '/manage-players', name: 'manage-players', component: ManagePlayers },
     { path: '*', redirect: { name: 'home' } },
   ],
 });

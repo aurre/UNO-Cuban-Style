@@ -21,7 +21,7 @@
                 <div>
                   <label class="sr-only" for="player">Player</label>
                   <b-form-select :options="selectablePlayers" class="mb-2 mr-sm-2 mb-sm-0" id="player" v-model="selected" />
-                  <!-- <b-link href="/manage-players">Manage players...</b-link> -->
+                  <b-link href="/manage-players">manage players</b-link>
                 </div>
                 <b-button variant="primary" v-on:click="addPlayer" :disabled="!isComplete">Add Player</b-button>
               </b-form>
