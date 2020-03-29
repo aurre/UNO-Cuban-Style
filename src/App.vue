@@ -1,6 +1,10 @@
 <template>
+<<<<<<< HEAD
   <div id="app" class="d-flex flex-column align-items-center">
     <img alt="UNO logo" class="uno-logo" src="./assets/uno-logo.png">
+=======
+  <div id="app">
+>>>>>>> e1da2762030a321cd5ae09185113748e9faf6769
     <router-view></router-view>
   </div>
 </template>
