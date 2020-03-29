@@ -65,6 +65,7 @@ const actions = {
   },
 
   [ActionTypes.ADD_PLAYER](context, player) {
+    // await axios.post(`${BASE_URL}api/`)
     context.commit(MutationTypes.ADD_PLAYER, player);
   },
 

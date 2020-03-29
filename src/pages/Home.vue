@@ -1,18 +1,18 @@
 <template>
   <div class="home">
-    <h1>CUBAN STYLE!</h1>
+    <h1 class="title">CUBAN STYLE!</h1>
 
     <game-list></game-list>
   </div>
 </template>
 
 <script>
-import GameList from '@/components/GameList';
+import GameList from "@/components/GameList";
 
 export default {
-  name: 'home',
+  name: "home",
   components: {
-    GameList,
+    GameList
   }
 };
 </script>
@@ -32,5 +32,10 @@ li {
 }
 a {
   color: #42b983;
+}
+
+.title {
+  text-align: center;
+  margin-top: 1rem;
 }
 </style>

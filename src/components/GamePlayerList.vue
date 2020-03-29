@@ -9,27 +9,52 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="player in gamePlayers" :key="player.id">
+          <tr
+            v-for="player in gamePlayers"
+            :key="player.id"
+          >
             <td class="d-flex flex-row justify-content-between">
               <span>{{ player.name }}</span>
-              <button type="button" class="btn btn-link" v-on:click="removePlayer(player.id)">Remove</button>
+              <button
+                type="button"
+                class="btn btn-link"
+                v-on:click="removePlayer(player.id)"
+              >Remove</button>
             </td>
           </tr>
           <tr v-if="selectablePlayers.length > 0">
             <td colspan="2">
-              <b-form inline class="d-flex flex-row justify-content-between">
+              <b-form
+                inline
+                class="d-flex flex-row justify-content-between"
+              >
                 <div>
-                  <label class="sr-only" for="player">Player</label>
-                  <b-form-select :options="selectablePlayers" class="mb-2 mr-sm-2 mb-sm-0" id="player" v-model="selected" />
+                  <label
+                    class="sr-only"
+                    for="player"
+                  >Player</label>
+                  <b-form-select
+                    :options="selectablePlayers"
+                    class="mb-2 mr-sm-2 mb-sm-0"
+                    id="player"
+                    v-model="selected"
+                  />
                   <b-link href="/manage-players">manage players</b-link>
                 </div>
-                <b-button variant="primary" v-on:click="addPlayer" :disabled="!isComplete">Add Player</b-button>
+                <b-button
+                  variant="primary"
+                  v-on:click="addPlayer"
+                  :disabled="!isComplete"
+                >Add Player</b-button>
               </b-form>
 
             </td>
           </tr>
           <tr v-if="!canStartGame">
-            <td colspan="2" class="text-center">
+            <td
+              colspan="2"
+              class="text-center"
+            >
               <span v-if="missingPlayerCount > 0">
                 Select at least {{ missingPlayerCount }} <span v-if="missingPlayerCount < 2">more</span> player(s)
               </span>
@@ -40,8 +65,16 @@
           </tr>
 
           <tr v-if="canStartGame">
-            <td colspan="2" class="text-center">
-              <b-button variant="primary" size="lg" v-on:click="startGame" :disabled="!canStartGame">Start Game</b-button>
+            <td
+              colspan="2"
+              class="text-center"
+            >
+              <b-button
+                variant="primary"
+                size="lg"
+                v-on:click="startGame"
+                :disabled="!canStartGame"
+              >Start Game</b-button>
             </td>
           </tr>
         </tbody>
@@ -51,17 +84,17 @@
 </template>
 
 <script>
-import { ActionTypes as GameActions } from '@/store/modules/game/index';
-import { ActionTypes as PlayerActions } from '@/store/modules/player/index';
+import { ActionTypes as GameActions } from "@/store/modules/game/index";
+import { ActionTypes as PlayerActions } from "@/store/modules/player/index";
 
 export default {
-  name: 'game-player-list',
+  name: "game-player-list",
   created: function() {
     this.$store.dispatch(PlayerActions.GET_PLAYERS);
   },
   data() {
     return {
-      selected: -1,
+      selected: -1
     };
   },
   computed: {
@@ -96,18 +129,18 @@ export default {
         .map(p => {
           return {
             value: p.id,
-            text: p.name,
+            text: p.name
           };
         });
 
       result.push({
         value: -1,
-        text: '(none)',
+        text: "(none)"
       });
 
       result.sort((a, b) => a.value - b.value);
       return result;
-    },
+    }
   },
   methods: {
     removePlayer(playerId) {
@@ -125,8 +158,8 @@ export default {
         });
     },
     startGame() {
-      alert('Coming soon!');
-    },
-  },
+      this.$router.push("/game");
+    }
+  }
 };
 </script>

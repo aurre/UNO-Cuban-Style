@@ -9,30 +9,46 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="player in players"
-              :key="player.id">
+          <tr
+            v-for="player in players"
+            :key="player.id"
+          >
             <td class="d-flex flex-row justify-content-between">
               <span>{{ player.name }}</span>
-              <button type="button"
-                      class="btn btn-link"
-                      v-on:click="removePlayer(player.id)">Remove</button>
+              <button
+                type="button"
+                class="btn btn-link"
+                v-on:click="removePlayer(player.id)"
+              >Remove</button>
             </td>
           </tr>
           <tr>
             <td colspan="2">
-              <b-form inline
-                      class="d-flex flex-row justify-content-between">
+              <b-form
+                inline
+                class="d-flex flex-row justify-content-between"
+              >
                 <div>
-                  <label class="sr-only"
-                         for="player">Player</label>
-                  <b-form-input v-model="playerName"
-                                class="mb-2 mr-sm-2 mb-sm-0"
-                                type="text"
-                                placeholder="Enter player name..."></b-form-input>
+                  <label
+                    class="sr-only"
+                    for="player"
+                  >Player</label>
+                  <b-form-input
+                    v-model="playerName"
+                    class="mb-2 mr-sm-2 mb-sm-0"
+                    type="text"
+                    placeholder="Enter player name..."
+                  ></b-form-input>
                 </div>
-                <b-button variant="primary"
-                          v-on:click="addPlayer"
-                          :disabled="!isComplete">Add Player</b-button>
+                <b-button
+                  variant="primary"
+                  v-on:click="addPlayer"
+                  :disabled="!isComplete"
+                >Add Player</b-button>
+                <b-button
+                  variant="success"
+                  v-on:click="goToCurrentGameSetup"
+                >Done</b-button>
               </b-form>
             </td>
           </tr>
@@ -73,8 +89,10 @@ export default {
         });
     },
     removePlayer: function(playerId) {
-      this.$store
-        .dispatch(PlayerActions.REMOVE_PLAYER, playerId);
+      this.$store.dispatch(PlayerActions.REMOVE_PLAYER, playerId);
+    },
+    goToCurrentGameSetup: function() {
+      this.$router.push("/game-setup");
     }
   }
 };
