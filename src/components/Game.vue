@@ -4,34 +4,62 @@
       <table class="table table-dark">
         <thead>
           <tr>
-            <th scope="col" v-for="player in players" :key="player">{{ player }}</th>
+            <th
+              scope="col"
+              v-for="player in players"
+              :key="player"
+            >{{ player }}</th>
           </tr>
-          <tr v-for="(row, indx1) in data.handsPoints" :key="row">
-            <th scope="col" v-for="(col, indx2) in row" :key="col">
+          <tr
+            v-for="(row, indx1) in data.handsPoints"
+            :key="row"
+          >
+            <th
+              scope="col"
+              v-for="(col, indx2) in row"
+              :key="col"
+            >
               {{ data.handsPoints[indx1][indx2] }}
             </th>
           </tr>
           <tr>
-            <th scope="col" v-for="(player, index) in players" :key="player">
-              <input class="input-group-text input-margin" :key="index" v-model="data.points[index]" type="number">
+            <th
+              scope="col"
+              v-for="(player, index) in players"
+              :key="player"
+            >
+              <input
+                class="input-group-text input-margin"
+                :key="index"
+                v-model="data.points[index]"
+                type="number"
+              >
             </th>
           </tr>
           <tr>
-            <th v-for="total in data.totalPoints" :key="total">
+            <th
+              v-for="total in data.totalPoints"
+              :key="total"
+            >
               {{ total }}
             </th>
           </tr>
         </thead>
       </table>
-      <b-button :size="'lg'" :variant="'success'" v-on:click="savePoints">Next</b-button>
+      <b-button
+        :size="'lg'"
+        :variant="'success'"
+        v-on:click="savePoints"
+      >Next</b-button>
     </div>
+    <div> To Be Continue!! </div>
   </div>
 
 </template>
 
 <script>
 export default {
-  name: 'game',
+  name: "game",
 
   data() {
     return {
@@ -39,15 +67,15 @@ export default {
         points: [],
         handsPoints: [],
         hands: {},
-        totalPoints: [],
-      },
+        totalPoints: []
+      }
     };
   },
 
   computed: {
     players() {
-      return this.$store.state.home.players.players;
-    },
+      return this.$store.getters.players;
+    }
   },
 
   methods: {
@@ -57,10 +85,10 @@ export default {
 
       let filterPoints = this.data.points.map(point => {
         if (point === max.toString()) {
-          return point + '*';
+          return point + "*";
         }
-        if (point === '') {
-          return '-';
+        if (point === "") {
+          return "-";
         }
         return point;
       });
@@ -79,8 +107,8 @@ export default {
         });
       }
       return result;
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -103,7 +131,7 @@ th input {
 }
 
 .font {
-  font-family: 'Noto Sans TC', sans-serif;
+  font-family: "Noto Sans TC", sans-serif;
   size: 25px;
 }
 </style>
