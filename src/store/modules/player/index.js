@@ -3,7 +3,7 @@ import * as MutationTypes from './mutation-types';
 import BASE_URL from '@/config/app-settings.js';
 import axios from 'axios';
 
-export { ActionTypes };
+export { ActionTypes, MutationTypes };
 
 const state = {
   players: [],
@@ -21,6 +21,9 @@ const mutations = {
     if (playerIndex >= 0) {
       state.players.splice(playerIndex, 1);
     }
+  },
+  [MutationTypes.SET_PLAYERS](state, players) {
+    state.players = players;
   },
 };
 

@@ -18,7 +18,7 @@
           variant="outline-success"
           class="my-2 my-sm-0"
         >
-          <router-link to="/game">Start</router-link>
+          <router-link to="/game-setup">Start</router-link>
         </b-button>
       </b-nav-form>
     </div>
@@ -39,6 +39,7 @@
 </template>
 
 <script>
+import { MutationTypes as PlayersMutations } from "@/store/modules/player/index";
 import PlayersList from "./PlayersList.vue";
 
 export default {
@@ -64,7 +65,7 @@ export default {
 
       this.resetForm();
 
-      this.$store.commit("SET_PLAYERS", {
+      this.$store.commit(PlayersMutations.SET_PLAYERS, {
         players: this.data.names
       });
     },
